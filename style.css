@@ -1,0 +1,37 @@
+/* Base */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:sans-serif;line-height:1.5;background:#f9fafb;color:#333}
+.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:1rem}
+
+/* Header with Flexbox */
+.header{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:#111;color:#fff}
+.nav ul{display:flex;gap:1rem;list-style:none}
+.nav a{color:#fff;text-decoration:none}
+
+/* Grid Layout */
+.layout{
+  display:grid;gap:1rem;padding:1rem;
+  grid-template-areas:
+    "hero"
+    "features"
+    "sidebar"
+    "contact";
+}
+#hero{grid-area:hero}#features{grid-area:features}
+.sidebar{grid-area:sidebar}#contact{grid-area:contact}
+
+/* Flexbox row */
+.feature-row{display:flex;gap:1rem;flex-wrap:wrap}
+.feature{flex:1 1 100px;background:#eee;padding:1rem;text-align:center;border-radius:6px}
+
+/* Responsive breakpoints */
+@media(min-width:768px){
+  .layout{
+    grid-template-columns:2fr 1fr;
+    grid-template-areas:
+      "hero sidebar"
+      "features sidebar"
+      "contact sidebar";
+  }
+}
+.footer{text-align:center;padding:1rem;background:#111;color:#fff}
